@@ -47,6 +47,18 @@ public class Individual {
      */
     public Individual(int c_0, int num_letters) {
       // fill in
+
+      ArrayList<Character> chromosome = new ArrayList<Character>();
+
+      for (int i = 0; i < c_0; i++){
+        
+        char randomizedLetter = randomLetter(num_letters);
+        chromosome.add(randomizedLetter);
+        System.out.println(randomizedLetter);
+      }
+      
+
+
     }
 
      /**
@@ -68,6 +80,10 @@ public class Individual {
         // fill in
         // remove the return below and write your own
         return 0;
+    }
+
+    public static void main(String[] args) {
+      Individual test = new Individual(8, 5);
     }
     
 }
