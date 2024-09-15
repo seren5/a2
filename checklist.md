@@ -11,7 +11,7 @@ your work, please indicate the status of each item
 
 Assignment Points:
 
-_____ 1 pt: `Individual` initial constructor
+Yes 1 pt: `Individual` initial constructor
 
 _____ 1 pt: `Individual` two-parent constructor
 

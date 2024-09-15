@@ -1,5 +1,7 @@
-import java.util.concurrent.ThreadLocalRandom;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class Individual {
 
@@ -48,17 +50,15 @@ public class Individual {
     public Individual(int c_0, int num_letters) {
       // fill in
 
-      ArrayList<Character> chromosome = new ArrayList<Character>();
+      this.chromosome = new ArrayList<Character>();
 
       for (int i = 0; i < c_0; i++){
         
         char randomizedLetter = randomLetter(num_letters);
         chromosome.add(randomizedLetter);
-        System.out.println(randomizedLetter);
       }
-      
 
-
+      System.out.println("Your chromosome is: " + chromosome);
     }
 
      /**
@@ -70,6 +70,62 @@ public class Individual {
       */
     public Individual(Individual parent1, Individual parent2, int c_max, double m, int num_letters) {
       // fill in
+
+      ArrayList<Character> prefix = new  ArrayList<>();
+      ArrayList<Character> suffix = new  ArrayList<>();
+
+      int prefixLength = ThreadLocalRandom.current().nextInt(1, parent1.chromosome.size());
+
+      for (int i = 0; i < prefixLength; i++) {
+        prefix.add(parent1.chromosome.get(i));
+      }
+
+      System.out.println("Your prefix is: " + prefix);
+
+
+      int suffixLength = ThreadLocalRandom.current().nextInt(1, parent2.chromosome.size());
+
+      int j = parent2.chromosome.size() - 1;
+
+      for (int i = 0; i < suffixLength; i++) {
+        suffix.add(parent2.chromosome.get(j));
+        j--;
+      }
+
+      Collections.reverse(suffix);
+
+
+      System.out.println("Your suffix is: " + suffix);
+
+      chromosome = new  ArrayList<>(prefixLength + suffixLength);
+
+      for (int i = 0; i < prefixLength; i++) {
+        chromosome.add(prefix.get(i));
+      }
+
+      for (int i = 0; i < suffixLength; i++) {
+        chromosome.add(suffix.get(i));
+      }
+
+      while (this.chromosome.size() > c_max) {
+
+        for (int i = c_max; i < this.chromosome.size(); i++) {
+
+          this.chromosome.remove(chromosome.size()-1);
+
+        }
+      }
+
+      System.out.println("Your chromosome is: " + chromosome);
+
+      for (int i = 0; i < this.chromosome.size(); i++) {
+        boolean chance = doesMutate(i);
+        if (chance) {
+          chromosome.set(i, randomLetter(num_letters));
+        }
+      }
+
+      System.out.println("Your mutated chromosome is: " + chromosome);
     }
 
     /**
@@ -79,11 +135,38 @@ public class Individual {
     public int getFitness() {
         // fill in
         // remove the return below and write your own
-        return 0;
+
+        int fitnessScore = 0;
+
+        Iterator <Character> iterator = this.chromosome.iterator();
+
+        while (iterator.hasNext()){
+
+          if(this.chromosome.get(0) == this.chromosome.get(1)) {
+            fitnessScore = fitnessScore ++;
+          }
+          else {
+            fitnessScore = fitnessScore--;
+          }
+          System.out.print(iterator.next());
+        }
+        System.out.println("Your fitness score is: " + fitnessScore);
+        return fitnessScore;
+
     }
 
     public static void main(String[] args) {
-      Individual test = new Individual(8, 5);
+
+      Individual parent1 = new Individual(8, 5);
+      System.out.println();
+
+      Individual parent2 = new Individual(8, 5);
+      System.out.println();
+
+      Individual child = new Individual(parent1, parent2, 8, .5, 5);
+
+      child.getFitness();
+
     }
     
 }

@@ -4,9 +4,9 @@
 
 Group Members: Emily, Ari
 
-Any peers and/or TAs/Tutors you collaborated with:
+Any peers and/or TAs/Tutors you collaborated with: Rachel, Huda, Zoe
 
-Would you like to give "kudos" to anyone who was particularly supportive or helpful?
+Would you like to give "kudos" to anyone who was particularly supportive or helpful? Rachel and I ended up working together a lot.
 
 Cite any references used:
 
