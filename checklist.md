@@ -17,41 +17,41 @@ Yes 1 pt: `Individual` two-parent constructor
 
 Yes 2 pts: `Individual` method to compute fitness
 
-_____ 1 pt: `GA_Simulation` constructor & fields
+Yes 1 pt: `GA_Simulation` constructor & fields
 
-_____ 1 pt: `init` method
+Yes 1 pt: `init` method
 
-_____ 2 pts: `evolve` method
+Yes 2 pts: `evolve` method
 
-_____ 1 pts: `describeGeneration` method
+Yes 1 pts: `describeGeneration` method
 
-_____ 1 pt: `run` method
+Yes 1 pt: `run` method
 
 
 Kudos:
 
-_____ (Kudos!) Exploration of genetic algorithm performance under different parameter settings
+Yes (Kudos!) Exploration of genetic algorithm performance under different parameter settings
 
 
 ## General Items:
 
-_____ 4 pts: Programs compile without errors or warnings
+Yes 4 pts: Programs compile without errors or warnings
 
-_____ 2 pts: Executes fully & consistently without crashing (exception/freeze)
+Yes 2 pts: Executes fully & consistently without crashing (exception/freeze)
 
-_____ 2 pt: Complies with style guidelines (missing items 1 pt each):
+Yes 2 pt: Complies with style guidelines (missing items 1 pt each):
 
-  _____ Classes & class members all have Javadoc header comments
+  Yes Classes & class members all have Javadoc header comments
 
-  _____ Clear and consistent indentation of bracketed sections
+  Yes Clear and consistent indentation of bracketed sections
 
-  _____ Adheres to Java conventions on naming & capitalization
+  Yes Adheres to Java conventions on naming & capitalization
 
-  _____ Methods & variables all have clear and accurate names
+  Yes Methods & variables all have clear and accurate names
 
-  _____ Methods avoid confusing side effects
+  Yes Methods avoid confusing side effects
 
-_____ 1 pt: All required files included with submission (including completed checklist file)
+Yes 1 pt: All required files included with submission (including completed checklist file)
 
-_____ 1 pt: readme.md contains your personal reflection on the assignment
+Yes 1 pt: readme.md contains your personal reflection on the assignment
 
