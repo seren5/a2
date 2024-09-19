@@ -13,9 +13,9 @@ Assignment Points:
 
 Yes 1 pt: `Individual` initial constructor
 
-_____ 1 pt: `Individual` two-parent constructor
+Yes 1 pt: `Individual` two-parent constructor
 
-_____ 2 pts: `Individual` method to compute fitness
+Yes 2 pts: `Individual` method to compute fitness
 
 _____ 1 pt: `GA_Simulation` constructor & fields
 

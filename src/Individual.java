@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Iterator;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Individual {
@@ -134,23 +133,54 @@ public class Individual {
      */
     public int getFitness() {
         // fill in
-        // remove the return below and write your own
 
-        int fitnessScore = 0;
+        int mirrorPartnerFitnessScore = 0;
 
-        Iterator <Character> iterator = this.chromosome.iterator();
+        System.out.println();
+        System.out.println("Comparing mirror partner genes:");
 
-        while (iterator.hasNext()){
+        int j = this.chromosome.size();
 
-          if(this.chromosome.get(0) == this.chromosome.get(1)) {
-            fitnessScore = fitnessScore ++;
-          }
-          else {
-            fitnessScore = fitnessScore--;
-          }
-          System.out.print(iterator.next());
+       
+          
+        for (int i = 0; i <= (this.chromosome.size()-1)/2; i++) {
+
+          if (this.chromosome.get(i).equals(this.chromosome.get(j-1))) {
+            mirrorPartnerFitnessScore++;
+            j--;
+            System.out.println(this.chromosome.get(i).toString() + " X " + this.chromosome.get(j).toString() + " --> +1 ");
         }
-        System.out.println("Your fitness score is: " + fitnessScore);
+        else { 
+          mirrorPartnerFitnessScore--;
+          j--;
+          System.out.println(this.chromosome.get(i).toString() + " X " + this.chromosome.get(j).toString() +" --> -1 ");
+        }
+      
+    }
+
+        System.out.println("Subtotal: " + mirrorPartnerFitnessScore);
+        System.out.println();
+
+        int adjacentFitnessScore = 0;
+
+        System.out.println("Comparing adjacent genes:");
+        for (int i = 0; i < this.chromosome.size() - 1; i++) {
+          if (this.chromosome.get(i).equals(this.chromosome.get(i + 1))) {
+              adjacentFitnessScore--;
+              System.out.println(this.chromosome.get(i).toString() + this.chromosome.get(i+1).toString() +" --> -1 ");
+        } 
+
+        else {
+          System.out.println(this.chromosome.get(i).toString() + this.chromosome.get(i+1).toString() +" --> 0 ");
+        }
+
+      }
+        System.out.println("Subtotal: " + adjacentFitnessScore);
+        System.out.println();
+
+        int fitnessScore = adjacentFitnessScore + mirrorPartnerFitnessScore;
+        System.out.println("Total Fitness: " + fitnessScore);
+
         return fitnessScore;
 
     }
