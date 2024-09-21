@@ -68,7 +68,7 @@ We now have a constructor that allows two individuals to produce an offspring, b
 
 Your function to evaluate fitness will have two parts:
 - First, you will compare each letter to its mirror partner (i.e., the first with the last, second with the second-to-last, etc.). Each match ***increases*** fitness by 1, and each mismatch ***decreases*** fitness by 1. If there are an odd number of genes in the chromosome, you can ***increase*** fitness by 1 for the middle gene. 
-- Second, you will compare each gene with the preceding one (e.g., compare the 1st position with the 2nd, the 2nd with teh 3rd, etc.).  If there is a match, ***decrease*** fitness by 1.
+- Second, you will compare each gene with the preceding one (e.g., compare the 1st position with the 2nd, the 2nd with the 3rd, etc.).  If there is a match, ***decrease*** fitness by 1.
 
 This  `fitness` function should return an integer that will represent the fitness score you calculated for the individual.
 
